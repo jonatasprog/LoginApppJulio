@@ -14,8 +14,8 @@ namespace LoginApppJulio.com.juliodelima.suport
         {
             // Abrindo o navegador
             IWebDriver navegador = new ChromeDriver(@"C:\Users\jonat\drivers\");
-           // navegador.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            navegador.Manage().Timeouts().ImplicitWait.Add(TimeSpan.FromSeconds(5));
+            // navegador.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            navegador.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10.00);
 
             // Navegando para a página do Taskit!
             navegador.Navigate().GoToUrl("http://www.juliodelima.com.br/taskit");

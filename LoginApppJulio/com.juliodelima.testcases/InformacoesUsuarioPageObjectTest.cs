@@ -9,21 +9,26 @@ using NUnit.Framework;
 using LoginApppJulio.com.juliodelima.pageobjects;
 using LoginApppJulio.com.juliodelima.suport;
 
-namespace LoginApppJulio.com.juliodelima.testcases
+namespace LoginApppJulio.com.juliodelima.testcases   
 {
     [TestFixture]
     class InformacoesUsuarioPageObjectTest
     {        
-        IWebDriver driver = new ChromeDriver(@"C:\Users\jonat\drivers\");
+        IWebDriver driver;
 
-        public InformacoesUsuarioPageObjectTest()
+      
+        [SetUp]
+        public void setUp()
         {
-
-            //driver.Manage().Timeouts().ImplicitWait.Add(TimeSpan.FromSeconds(5));
-            driver.Navigate().GoToUrl("http://www.juliodelima.com.br/taskit");
-            driver.Manage().Window.Maximize();
-
+            driver = Web.createChrome();          //pegando uma instancia do chrome
         }
+
+        [TearDown]
+        public void tearDown()
+        {
+            driver.Quit();
+        }
+
         [Test]
         public void testAdicionarUmaInformacaoAdicionalDoUsuario()
         {
